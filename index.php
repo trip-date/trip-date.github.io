@@ -126,35 +126,73 @@ $new_trips =
                 <div id="new">
                     <h2>New itineraries</h2>
                     <ul>
-                        <li>
-                            <img href="assets/images/museum.png">
-                            itinerary name
-                        </li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
+            			<?php foreach( $new_trips as $new_trip ): ?>
+
+            				<li>
+
+            					<?=
+            						( new HTML( 'a' ) )
+            							->setAttr( 'href', $new_trip->getWikidataURL() )
+            							->addClass( 'wikidata-link' )
+            							->setAttr( 'target', '_blank' )
+            							->setText(
+            								( new HTML( 'img' ) )
+            									->setAttr( 'src', 'assets/images/wikidata.png' )
+            									->render()
+            							)
+            							->render()
+            					?>
+
+            					<!-- | -->
+
+            					<?=
+            						( new HTML( 'a' ) )
+            							->setText( esc_html( $new_trip->get( 'trip_name' ) ) )
+            							->setAttr( 'href',       $new_trip->getWikidataURL() )
+            							->setAttr( 'data-lat',   $new_trip->get( 'poi_lat' ) )
+            							->setAttr( 'data-lng',   $new_trip->get( 'poi_lng' ) )
+            							->setAttr( 'data-wdata', $new_trip->get( 'wikidata_ID' ) )
+            							->addClass( 'action-show-poi' )
+            							->render()
+            					?>
+            				</li>
+
+            			<?php endforeach ?>
                     </ul>
                 </div>
                 <div id="reccommended">
                     <h2>Reccommended</h2>
                     <ul>
 			<?php foreach( $featured_pois as $featured_poi ): ?>
-				<li><?=
-					( new HTML( 'a' ) )
-						->setText( esc_html( $featured_poi->get( 'poi_name' ) ) )
-						->setAttr( 'href',       $featured_poi->getWikidataURL() )
-						->setAttr( 'data-lat',   $featured_poi->get( 'poi_lat' ) )
-						->setAttr( 'data-lng',   $featured_poi->get( 'poi_lng' ) )
-						->setAttr( 'data-wdata', $featured_poi->get( 'wikidata_ID' ) )
-						->addClass( 'action-show-poi' )
-						->render()
-				?></li>
+				<li>
+					<?=
+						( new HTML( 'a' ) )
+							->setAttr( 'href', $featured_poi->getWikidataURL() )
+							->addClass( 'wikidata-link' )
+							->setAttr( 'target', '_blank' )
+							->setText(
+								( new HTML( 'img' ) )
+									->setAttr( 'src', 'assets/images/wikidata.png' )
+									->render()
+							)
+							->render()
+					?>
+
+					|
+
+					<?=
+						( new HTML( 'a' ) )
+							->setText(
+								 esc_html( $featured_poi->get( 'poi_name' ) )
+							)
+							->setAttr( 'href',       $featured_poi->getWikidataURL() )
+							->setAttr( 'data-lat',   $featured_poi->get( 'poi_lat' ) )
+							->setAttr( 'data-lng',   $featured_poi->get( 'poi_lng' ) )
+							->setAttr( 'data-wdata', $featured_poi->get( 'wikidata_ID' ) )
+							->addClass( 'action-show-poi' )
+							->render()
+					?>
+				</li>
 			<?php endforeach ?>
                     </ul>
                 </div>

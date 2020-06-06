@@ -1,9 +1,16 @@
 ( function() {
-	var map = L.map('map').setView([51.505, -0.09], 13);
+
+	var selector = 'map';
+
+	var map = L.map( selector ).setView([51.505, -0.09], 13);
 
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo( map );
+
+	// hide the map at startup
+	var $map = $( '#' + selector );
+	$map.hide();
 
 	// markers indexed by Wikidata ID
 	var markers = {};
@@ -25,6 +32,9 @@
 	} );
 
 	$actionShowPOIs.click( function( e ) {
+
+		$map.show();
+
 		var $el   = $(this);
 		var lat   = $el.data( 'lat' );
 		var lng   = $el.data( 'lng' );
