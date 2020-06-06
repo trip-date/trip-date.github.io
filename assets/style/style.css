@@ -50,7 +50,7 @@ header {
   -webkit-box-shadow: 0px 10px 15px 4px #dbdbdb;
   -moz-box-shadow: 0px 10px 15px 4px #dbdbdb;
   box-shadow: 0px 10px 15px 4px #dbdbdb;
-  z-index: 1; }
+  z-index: 999; }
   header h2 {
     display: inline;
     padding-left: 14px;
@@ -82,7 +82,8 @@ main {
     color: #5971F1;
     font-weight: bold; }
   main section {
-    width: 62%; }
+    width: 62%;
+    margin-bottom: 56px; }
     main section #itinerary, main section #profile {
       background-color: #FFF;
       border-radius: 7px; }
