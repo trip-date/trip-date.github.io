@@ -44,6 +44,8 @@
 		var wdata = $el.data( 'wdata' );
 		var title = $el.text();
 
+		console.log( title );
+
 		$poiName.text( title );
 
 		// asd

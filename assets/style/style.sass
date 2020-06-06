@@ -2,8 +2,8 @@ $x: 14px
 $color_a: #5971F1 // blue
 $color_b: #FFF // white
 $color_c: #000 // black
-$color_red: #E72F27 // red
-$color_green: #20b677 // green
+$color_red: #c984a3 // red
+$color_green: #1c777d // green
 $color_background: #EDEBF8
 
 /* ----------------- */
@@ -21,6 +21,7 @@ body
 	font-family: 'Roboto', sans-serif
 	background-color: $color_background
 	font-size: $x
+	//overflow: hidden
 
 a, a:visited
 	text-decoration: none
@@ -60,7 +61,7 @@ header
 	-webkit-box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
 	-moz-box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
 	box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
-	z-index: 1
+	z-index: 999
 	
 	h2
 		display: inline
@@ -99,20 +100,26 @@ main
 
 	section
 		width: 62%
+		margin-bottom: $x * 4
 		//padding: $x
+		//overflow: scroll
 
 		#itinerary, #profile
 			background-color: $color_b
-			height: 75vh
+			// height: 75vh
 			border-radius: $x * 0.5
 		
 		h2
 			margin-bottom: $x
 
+		h3
+			margin: $x 0
+
 		#buttons
-			position: absolute
-			width: 62%
-			bottom: 0
+			// position: absolute
+			//bottom: 0
+			width: 100%
+			margin-top: $x * 3
 			cursor: pointer
 			display: flex
 			justify-content: space-between
@@ -155,9 +162,16 @@ main
 				padding: $x 0
 				border-bottom: 1px solid darken($color_b,30)
 				cursor: pointer
+
+				img
+					width: $x * 2
 				
 			li:hover
-				background-color: lighten($color_a,10)
+				background-color: lighter($color_a,10)
+
+			.trip
+				font-weight: bold
+				display: block
 
 		#liked
 			height: 80vh
@@ -165,6 +179,7 @@ main
 
 		//#reccommended
 		//	background-color: red
+
 
 footer
 	position: fixed

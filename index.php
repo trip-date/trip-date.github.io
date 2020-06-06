@@ -98,12 +98,12 @@ $new_trips =
                 </div>
                 <div id="itinerary">
                     <div class="container">
-                        <h2 class="poi-name">Itinerary name</h2>
+                        <h2 class="poi-name">Water and Fire</h2>
 			<div id="map" style="height: 400px"></div>
-                        <img src="assets/images/itinerario_verzasca.png">
+                        <img src="assets/images/cascata.jpg" />
                         <div>
                             <h3>Information</h3>
-                            <div>meta 0 <a href="">Link</a></div>
+                            <div>by Museum Val Verzasca</div>
                             <div>meta 1</div>
                             <div>meta 2</div>
                             <div>meta 3</div>
@@ -112,6 +112,8 @@ $new_trips =
                             <div>meta 6</div>
                             <div>meta 7</div>
                             <div>meta 8</div>
+                            <div>meta 9</div>
+                            <div>meta 10</div>
                         </div>
                     </div>
                     <div id="buttons">
@@ -124,38 +126,38 @@ $new_trips =
                 <div id="new">
                     <h2>New itineraries</h2>
                     <ul>
-			<?php foreach( $new_trips as $new_trip ): ?>
+            			<?php foreach( $new_trips as $new_trip ): ?>
 
-				<li>
+            				<li>
 
-					<?=
-						( new HTML( 'a' ) )
-							->setAttr( 'href', $new_trip->getWikidataURL() )
-							->addClass( 'wikidata-link' )
-							->setAttr( 'target', '_blank' )
-							->setText(
-								( new HTML( 'img' ) )
-									->setAttr( 'src', 'assets/images/wikidata.png' )
-									->render()
-							)
-							->render()
-					?>
+            					<?=
+            						( new HTML( 'a' ) )
+            							->setAttr( 'href', $new_trip->getWikidataURL() )
+            							->addClass( 'wikidata-link' )
+            							->setAttr( 'target', '_blank' )
+            							->setText(
+            								( new HTML( 'img' ) )
+            									->setAttr( 'src', 'assets/images/edit.png' )
+            									->render()
+            							)
+            							->render()
+            					?>
 
-					|
+            					<!-- | -->
 
-					<?=
-						( new HTML( 'a' ) )
-							->setText( esc_html( $new_trip->get( 'trip_name' ) ) )
-							->setAttr( 'href',       $new_trip->getWikidataURL() )
-							->setAttr( 'data-lat',   $new_trip->get( 'poi_lat' ) )
-							->setAttr( 'data-lng',   $new_trip->get( 'poi_lng' ) )
-							->setAttr( 'data-wdata', $new_trip->get( 'wikidata_ID' ) )
-							->addClass( 'action-show-poi' )
-							->render()
-					?>
-				</li>
+            					<?=
+            						( new HTML( 'a' ) )
+            							->setText( esc_html( $new_trip->get( 'trip_name' ) ) )
+            							->setAttr( 'href',       $new_trip->getWikidataURL() )
+            							->setAttr( 'data-lat',   $new_trip->get( 'poi_lat' ) )
+            							->setAttr( 'data-lng',   $new_trip->get( 'poi_lng' ) )
+            							->setAttr( 'data-wdata', $new_trip->get( 'wikidata_ID' ) )
+            							->addClass( 'action-show-poi' )
+            							->render()
+            					?>
+            				</li>
 
-			<?php endforeach ?>
+            			<?php endforeach ?>
                     </ul>
                 </div>
                 <div id="reccommended">
@@ -170,7 +172,7 @@ $new_trips =
 							->setAttr( 'target', '_blank' )
 							->setText(
 								( new HTML( 'img' ) )
-									->setAttr( 'src', 'assets/images/wikidata.png' )
+									->setAttr( 'src', 'assets/images/edit.png' )
 									->render()
 							)
 							->render()
