@@ -147,11 +147,13 @@ $new_trips =
 
             					<?=
             						( new HTML( 'a' ) )
-            							->setText( esc_html( $new_trip->get( 'trip_name' ) ) )
-            							->setAttr( 'href',       $new_trip->getWikidataURL() )
-            							->setAttr( 'data-lat',   $new_trip->get( 'poi_lat' ) )
-            							->setAttr( 'data-lng',   $new_trip->get( 'poi_lng' ) )
-            							->setAttr( 'data-wdata', $new_trip->get( 'wikidata_ID' ) )
+            							->setText( esc_html( $new_trip->get( 'trip_name' ) . ' (' . $new_trip->get( 'poi_name' ) . ')' ) )
+            							->setAttr( 'href',          $new_trip->getWikidataURL() )
+            							->setAttr( 'data-lat',      $new_trip->get( 'poi_lat' ) )
+            							->setAttr( 'data-lng',      $new_trip->get( 'poi_lng' ) )
+            							->setAttr( 'data-wdata',    $new_trip->get( 'wikidata_ID' ) )
+								->setAttr( 'data-length',   $new_trip->get( 'trip_length_m' ) )
+								->setAttr( 'data-location', $new_trip->get( 'trip_location' ) )
             							->addClass( 'action-show-poi' )
             							->render()
             					?>
