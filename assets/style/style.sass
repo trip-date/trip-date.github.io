@@ -24,7 +24,7 @@ body
 
 a, a:visited
 	text-decoration: none
-	color: $color_b
+	color: $color_a
 
 a:hover
 	text-decoration: none
@@ -46,6 +46,10 @@ h3
 img
 	max-width: 100%
 
+section
+	margin: 0
+	padding: 0
+
 header 
 	position: fixed
 	width: 100%
@@ -56,12 +60,18 @@ header
 	-webkit-box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
 	-moz-box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
 	box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
-	color: white
 	z-index: 1
-
+	
 	h2
 		display: inline
 		padding-left: $x
+		font-weight: normal
+		
+		a
+			color: $color_b !important
+
+	h1 a
+		color: $color_b !important
 
 .container
 	padding: $x
@@ -70,6 +80,7 @@ header
 	display: flex
 	justify-content: space-between
 	position: relative
+	margin-bottom: $x
 
 	select
 		height: $x * 2
@@ -82,14 +93,18 @@ main
 	top: $x * 8
 	margin: 0 $x $x
 
+	a
+		color: $color_a
+		font-weight: bold
+
 	section
 		width: 62%
 		//padding: $x
 
-		#itinerary
+		#itinerary, #profile
 			background-color: $color_b
-			margin-top: $x
 			height: 75vh
+			border-radius: $x * 0.5
 		
 		h2
 			margin-bottom: $x
@@ -110,8 +125,14 @@ main
 			#like
 				background-color: $color_green
 
+			#like:hover
+				background-color: darken($color_green,10)
+
 			#dislike
 				background-color: $color_red
+
+			#dislike:hover	
+				background-color: darken($color_red,10)
 
 	aside
 		width: 35%
@@ -122,6 +143,9 @@ main
 			border-radius: $x * 0.5
 			padding: $x
 			background-color: $color_b
+
+			h2
+				padding-bottom: $x
 			
 			ul
 				height: 90%
@@ -133,10 +157,11 @@ main
 				cursor: pointer
 				
 			li:hover
-				background-color: lighten($color_a,20)
+				background-color: lighten($color_a,10)
 
-		//#new
-			//background-color: green
+		#liked
+			height: 80vh
+			background-color: $color_b
 
 		//#reccommended
 		//	background-color: red
