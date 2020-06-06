@@ -2,6 +2,8 @@ $x: 14px
 $color_a: #5971F1 // blue
 $color_b: #FFF // white
 $color_c: #000 // black
+$color_red: #E72F27 // red
+$color_green: #20b677 // green
 $color_background: #EDEBF8
 
 /* ----------------- */
@@ -32,11 +34,14 @@ ul
 	padding: 0
 	list-style: none
 
-h1, h2
+h1, h2, h3
 	margin: 0
 
 h2
 	font-size: $x*1.8
+
+h3
+	font-size: $x*1.3
 
 img
 	max-width: 100%
@@ -52,17 +57,23 @@ header
 	-moz-box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
 	box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
 	color: white
+	z-index: 1
 
 	h2
 		display: inline
 		padding-left: $x
 
+.container
+	padding: $x
+
 #filters_box
 	display: flex
 	justify-content: space-between
 	position: relative
-	top: $x * 5
-	padding: $x
+
+	select
+		height: $x * 2
+		width: $x * 7
 
 main
 	display: flex
@@ -73,18 +84,42 @@ main
 
 	section
 		width: 62%
-		//background-color: orange
+		//padding: $x
 
+		#itinerary
+			background-color: $color_b
+			margin-top: $x
+			height: 75vh
+		
 		h2
 			margin-bottom: $x
+
+		#buttons
+			position: absolute
+			width: 62%
+			bottom: 0
+			cursor: pointer
+			display: flex
+			justify-content: space-between
+
+			div
+				text-align: center
+				width: 50%
+				color: white
+
+			#like
+				background-color: $color_green
+
+			#dislike
+				background-color: $color_red
 
 	aside
 		width: 35%
 
 		div
-			margin-bottom: $x
-			height: 35vh
-			border-radius: $x*0.5
+			margin-bottom: $x * 1.2 
+			height: 40vh
+			border-radius: $x * 0.5
 			padding: $x
 			background-color: $color_b
 			
