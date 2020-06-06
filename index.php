@@ -137,9 +137,10 @@ $featured_pois =
 				<li><?=
 					( new HTML( 'a' ) )
 						->setText( esc_html( $featured_poi->get( 'poi_name' ) ) )
-						->setAttr( 'href',     $featured_poi->getWikidataURL() )
-						->setAttr( 'data-lat', $featured_poi->get( 'poi_lat' ) )
-						->setAttr( 'data-lng', $featured_poi->get( 'poi_lng' ) )
+						->setAttr( 'href',       $featured_poi->getWikidataURL() )
+						->setAttr( 'data-lat',   $featured_poi->get( 'poi_lat' ) )
+						->setAttr( 'data-lng',   $featured_poi->get( 'poi_lng' ) )
+						->setAttr( 'data-wdata', $featured_poi->get( 'wikidata_ID' ) )
 						->addClass( 'action-show-poi' )
 						->render()
 				?></li>
