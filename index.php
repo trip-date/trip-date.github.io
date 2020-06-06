@@ -160,8 +160,8 @@ $new_trips =
             			<?php endforeach ?>
                     </ul>
                 </div>
-                <div id="reccommended">
-                    <h2>Reccommended</h2>
+                <div id="recommended">
+                    <h2>Recommended</h2>
                     <ul>
 			<?php foreach( $featured_pois as $featured_poi ): ?>
 				<li>
@@ -178,7 +178,7 @@ $new_trips =
 							->render()
 					?>
 
-					|
+					<!-- | -->
 
 					<?=
 						( new HTML( 'a' ) )
