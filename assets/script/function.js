@@ -12,12 +12,20 @@
 	var $map = $( '#' + selector );
 	$map.hide();
 
+	var $title   = $( '.title' );
 	var $poiName = $( '.poi-name' );
 
 	// markers indexed by Wikidata ID
 	var markers = {};
 
 	var $actionShowPOIs = $( '.action-show-poi' );
+
+	var fields = [
+		'length',
+		'minutes',
+		'location',
+		'height',
+	];
 
 	$actionShowPOIs.each( function() {
 		var $el   = $(this);
@@ -35,18 +43,33 @@
 
 	$actionShowPOIs.click( function( e ) {
 
+
 		$map.show();
 		map.invalidateSize();
 
-		var $el   = $(this);
-		var lat   = $el.data( 'lat' );
-		var lng   = $el.data( 'lng' );
-		var wdata = $el.data( 'wdata' );
+		var $el     = $(this);
+		var lat     = $el.data( 'lat'   );
+		var lng     = $el.data( 'lng'   );
+		var wdata   = $el.data( 'wdata' );
+		var poiname = $el.data( 'title' );
+		var tripLength = $el.data( 'length' );
 		var title = $el.text();
 
-		console.log( title );
+		for( var i in fields ) {
+			var field = fields[ i ];
+			var value = $el.data( field );
+			if( value ) {
+				$( '.trip-' + field + '-container' ).show();
+				$( '.trip-' + field ).text( value );
+			} else {
+				$( '.trip-' + field + '-container' ).hide();
+			}
+		}
 
-		$poiName.text( title );
+		$title.text( title );
+		$poiName.text( poiname );
+
+		console.log( tripLength );
 
 		// asd
 		map.setView( [ lat, lng ], 20 );

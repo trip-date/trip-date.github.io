@@ -98,22 +98,16 @@ $new_trips =
                 </div>
                 <div id="itinerary">
                     <div class="container">
-                        <h2 class="poi-name">Water and Fire</h2>
+                        <h2 class="title">Water and Fire</h2>
 			<div id="map" style="height: 400px"></div>
                         <img src="assets/images/cascata.jpg" />
                         <div>
                             <h3>Information</h3>
-                            <div>by Museum Val Verzasca</div>
-                            <div>meta 1</div>
-                            <div>meta 2</div>
-                            <div>meta 3</div>
-                            <div>meta 4</div>
-                            <div>meta 5</div>
-                            <div>meta 6</div>
-                            <div>meta 7</div>
-                            <div>meta 8</div>
-                            <div>meta 9</div>
-                            <div>meta 10</div>
+                            <div>by <span class="poi-name">Museum Val Verzasca</span></div>
+                            <div class="trip-length-container">Trip length (meters): <span class="trip-length">?</span></div>
+                            <div class="trip-location-container">Place: <span class="trip-location">?</span></div>
+                            <div class="trip-height-container">Trip length (meters): <span class="trip-height">?</span></div>
+                            <div class="trip-minutes-container">Trip duration (minutes): <span class="trip-minutes">?</span></div>
                         </div>
                     </div>
                     <div id="buttons">
@@ -152,8 +146,11 @@ $new_trips =
             							->setAttr( 'data-lat',      $new_trip->get( 'poi_lat' ) )
             							->setAttr( 'data-lng',      $new_trip->get( 'poi_lng' ) )
             							->setAttr( 'data-wdata',    $new_trip->get( 'wikidata_ID' ) )
+            							->setAttr( 'data-poiname',  $new_trip->get( 'poi_name' ) )
 								->setAttr( 'data-length',   $new_trip->get( 'trip_length_m' ) )
 								->setAttr( 'data-location', $new_trip->get( 'trip_location' ) )
+								->setAttr( 'data-height',   $new_trip->get( 'trip_height' ) )
+								->setAttr( 'data-minutes',  $new_trip->get( 'trip_minutes' ) )
             							->addClass( 'action-show-poi' )
             							->render()
             					?>
