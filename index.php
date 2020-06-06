@@ -1,3 +1,20 @@
+<?php
+
+// apologies for the dirty and quick!
+// we have NOT the time for this! asd
+
+require __DIR__ . '/load.php';
+
+$featured_pois =
+	( new Query() )
+		->from( 'poi' )
+		->whereInt( 'poi_featured', 1 )
+		->defaultClass( 'POI' )
+		->queryResults();
+
+
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -118,17 +135,14 @@
                 <div id="reccommended">
                     <h2>Reccommended</h2>
                     <ul>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                    </ul>
+			<?php foreach( $featured_pois as $featured_poi ): ?>
+				<li>
+					<?= HTML::a(
+						$featured_poi->getWikidataURL(),
+						$featured_poi->get( 'poi_name' )
+					) ?>
+				</li>
+			<?php endforeach ?>
                     </ul>
                 </div>
             </aside>
