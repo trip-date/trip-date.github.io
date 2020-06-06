@@ -1,8 +1,6 @@
 <?php
 
-class POI extends Queried {
-
-	const T = 'poi';
+trait POITrait {
 
 	function getImageURL() {
 		return sprintf(
@@ -35,7 +33,12 @@ class POI extends Queried {
 		return $data;
 	}
 
-	function __construct() {
+}
 
-	}
+class POI extends Queried {
+
+	use POITrait;
+
+	const T = 'poi';
+
 }

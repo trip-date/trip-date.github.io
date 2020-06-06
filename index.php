@@ -8,8 +8,14 @@ require __DIR__ . '/load.php';
 $featured_pois =
 	( POI::factory() )
 		->whereInt( 'poi_featured', 1 )
+		->orderBy( 'poi_name' )
 		->queryResults();
 
+$new_trips =
+	( Trip::factory() )
+		->joinOn( 'INNER', 'poi', 'poi.poi_ID = trip.poi_ID' )
+		->orderBy( 'trip_name' )
+		->queryResults();
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,10 +30,11 @@ $featured_pois =
         <meta name="theme-color"                           content="black"> <!-- Chrome, Firefox OS and Opera -->
         <meta name="msapplication-navbutton-color"         content="black"> <!-- Windows Phone -->
         <meta name="apple-mobile-web-app-status-bar-style" content="black"> <!-- iOS Safari -->
-        <link rel="stylesheet" href="assets/style/style.css">
+        <link rel="stylesheet" href="assets/style/style.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/script/function.js"></script>
     </head>
     <body>
         <header id="header">
@@ -92,7 +99,8 @@ $featured_pois =
                 <div id="itinerary">
                     <div class="container">
                         <h2>Itinerary name</h2>
-                        <img src="assets/images/itinerario_verzasca.png" width="1331" heigth="851">
+			         <div id="map" style="height: 400px"></div>
+                            <img src="assets/images/itinerario_verzasca.png">
                         <div>
                             <h3>Information</h3>
                             <div>meta 0</div>
@@ -137,12 +145,16 @@ $featured_pois =
                     <h2>Reccommended</h2>
                     <ul>
 			<?php foreach( $featured_pois as $featured_poi ): ?>
-				<li>
-					<?= HTML::a(
-						$featured_poi->getWikidataURL(),
-						$featured_poi->get( 'poi_name' )
-					) ?>
-				</li>
+				<li><?=
+					( new HTML( 'a' ) )
+						->setText( esc_html( $featured_poi->get( 'poi_name' ) ) )
+						->setAttr( 'href',       $featured_poi->getWikidataURL() )
+						->setAttr( 'data-lat',   $featured_poi->get( 'poi_lat' ) )
+						->setAttr( 'data-lng',   $featured_poi->get( 'poi_lng' ) )
+						->setAttr( 'data-wdata', $featured_poi->get( 'wikidata_ID' ) )
+						->addClass( 'action-show-poi' )
+						->render()
+				?></li>
 			<?php endforeach ?>
                     </ul>
                 </div>
@@ -151,7 +163,6 @@ $featured_pois =
         <footer>
             Trip Date
         </footer>
+        <script type="text/javascript" src="assets/script/function.js"></script>
     </body>
 </html>
-
-

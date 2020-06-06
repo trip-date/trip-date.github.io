@@ -44,7 +44,7 @@ foreach( $rows as $row ) {
 	if( $coordinates ) {
 		$coordinates = str_replace( 'Point(', '', $coordinates );
 		$coordinates = rtrim( $coordinates, ')' );
-		list( $lat, $lng ) = explode( ' ', $coordinates );
+		list( $lng, $lat ) = explode( ' ', $coordinates );
 		$lat = (float) $lat;
 		$lng = (float) $lng;
 	}
