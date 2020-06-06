@@ -98,12 +98,12 @@ $new_trips =
                 </div>
                 <div id="itinerary">
                     <div class="container">
-                        <h2>Itinerary name</h2>
+                        <h2>Water and Fire</h2>
 			         <div id="map" style="height: 400px"></div>
-                            <img src="assets/images/itinerario_verzasca.png">
+                            <img src="assets/images/cascata.jpg">
                         <div>
                             <h3>Information</h3>
-                            <div>meta 0</div>
+                            <div>by Museum Val Verzasca</div>
                             <div>meta 1</div>
                             <div>meta 2</div>
                             <div>meta 3</div>
@@ -137,7 +137,7 @@ $new_trips =
             							->setAttr( 'target', '_blank' )
             							->setText(
             								( new HTML( 'img' ) )
-            									->setAttr( 'src', 'assets/images/wikidata.png' )
+            									->setAttr( 'src', 'assets/images/edit.png' )
             									->render()
             							)
             							->render()
@@ -172,7 +172,7 @@ $new_trips =
 							->setAttr( 'target', '_blank' )
 							->setText(
 								( new HTML( 'img' ) )
-									->setAttr( 'src', 'assets/images/wikidata.png' )
+									->setAttr( 'src', 'assets/images/edit.png' )
 									->render()
 							)
 							->render()
