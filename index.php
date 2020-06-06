@@ -6,13 +6,9 @@
 require __DIR__ . '/load.php';
 
 $featured_pois =
-	( new Query() )
-		->from( 'poi' )
+	( POI::factory() )
 		->whereInt( 'poi_featured', 1 )
-		->defaultClass( 'POI' )
 		->queryResults();
-
-
 
 ?>
 <!DOCTYPE html>

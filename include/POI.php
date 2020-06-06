@@ -2,6 +2,8 @@
 
 class POI extends Queried {
 
+	const T = 'poi';
+
 	function getImageURL() {
 		return sprintf(
 			'http://commons.wikimedia.org/wiki/Special:FilePath/%s',

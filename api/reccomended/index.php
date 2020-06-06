@@ -3,10 +3,8 @@
 require __DIR__ . '/../../load.php';
 
 $pois =
-	( new Query() )
-		->from( 'poi' )
+	( POI::factory() )
 		->whereInt( 'poi_featured', 1 )
-		->defaultClass( 'POI' )
 		->queryResults();
 
 $pois_ready = [];
