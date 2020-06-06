@@ -91,9 +91,11 @@ main {
       margin-bottom: 14px; }
     main section h3 {
       margin: 14px 0; }
+    main section #itinerary_info {
+      margin-bottom: 14px; }
     main section #buttons {
       width: 100%;
-      margin-top: 42px;
+      margin: 14px 0;
       cursor: pointer;
       display: flex;
       justify-content: space-between; }

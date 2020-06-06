@@ -58,3 +58,23 @@
 	} );
 
 } )();
+
+function likes(){
+	$("#like").click(function() {
+		$("#itinerary").css("background-color","#96d5d9")
+		setTimeout(function(){
+			$("#itinerary").css("background-color","white")
+		},500);
+	})
+
+	$("#dislike").click(function() {
+		$("#itinerary").css("background-color","#f1c7da")
+		setTimeout(function(){
+			$("#itinerary").css("background-color","white")
+		},500);
+	})
+}
+
+$( document ).ready(function() {
+	likes();
+})

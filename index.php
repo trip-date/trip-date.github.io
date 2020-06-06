@@ -99,9 +99,13 @@ $new_trips =
                 <div id="itinerary">
                     <div class="container">
                         <h2 class="poi-name">Water and Fire</h2>
-			<div id="map" style="height: 400px"></div>
+			         <div id="map" style="height: 400px"></div>
                         <img src="assets/images/cascata.jpg" />
-                        <div>
+                    <div id="buttons">
+                        <div id="like" class="container"><h3>Like</h3></div>
+                        <div id="dislike" class="container"><h3>Dislike</h3></div>
+                    </div>
+                        <div id="itinerary_info">
                             <h3>Information</h3>
                             <div>by Museum Val Verzasca</div>
                             <div>meta 1</div>
@@ -115,10 +119,6 @@ $new_trips =
                             <div>meta 9</div>
                             <div>meta 10</div>
                         </div>
-                    </div>
-                    <div id="buttons">
-                        <div id="like" class="container"><h3>Like</h3></div>
-                        <div id="dislike" class="container"><h3>Dislike</h3></div>
                     </div>
                 </div>
             </section>
