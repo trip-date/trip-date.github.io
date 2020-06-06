@@ -1,0 +1,120 @@
+$x: 14px
+$color_a: #5971F1 // blue
+$color_b: #FFF // white
+$color_c: #000 // black
+$color_background: #EDEBF8
+
+/* ----------------- */
+
+
+html
+	box-sizing: border-box
+
+*, *:before, *:after
+	box-sizing: inherit
+
+body
+	margin: 0
+	padding: 0 
+	font-family: 'Roboto', sans-serif
+	background-color: $color_background
+	font-size: $x
+
+a, a:visited
+	text-decoration: none
+	color: $color_b
+
+a:hover
+	text-decoration: none
+
+ul
+	margin: 0
+	padding: 0
+	list-style: none
+
+h1, h2
+	margin: 0
+
+h2
+	font-size: $x*1.8
+
+img
+	max-width: 100%
+
+header 
+	position: fixed
+	width: 100%
+	background-color: $color_a
+	display: flex
+	justify-content: space-between
+	padding: $x
+	-webkit-box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
+	-moz-box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
+	box-shadow: 0px 10px 15px 4px rgba(219,219,219,1)
+	color: white
+
+	h2
+		display: inline
+		padding-left: $x
+
+#filters_box
+	display: flex
+	justify-content: space-between
+	position: relative
+	top: $x * 5
+	padding: $x
+
+main
+	display: flex
+	justify-content: space-between
+	position: relative
+	top: $x * 8
+	margin: 0 $x $x
+
+	section
+		width: 62%
+		//background-color: orange
+
+		h2
+			margin-bottom: $x
+
+	aside
+		width: 35%
+
+		div
+			margin-bottom: $x
+			height: 35vh
+			border-radius: $x*0.5
+			padding: $x
+			background-color: $color_b
+			
+			ul
+				height: 90%
+				overflow: scroll
+
+			li
+				padding: $x 0
+				border-bottom: 1px solid darken($color_b,30)
+				cursor: pointer
+				
+			li:hover
+				background-color: lighten($color_a,20)
+
+		//#new
+			//background-color: green
+
+		//#reccommended
+		//	background-color: red
+
+footer
+	position: fixed
+	width: 100%
+	height: $x*3
+	bottom: 0
+	padding: $x
+	font-size: $x
+	background-color: $color_a
+	color: white
+
+
+
