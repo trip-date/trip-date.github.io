@@ -1,0 +1,12 @@
+#Cats
+SELECT ?item ?itemLabel ?image ?coordinates
+WHERE 
+{
+  ?item wdt:P31/wdt:P279* wd:Q33506.
+  ?item wdt:P131 wd:Q12724.
+  ?item wdt:P625 ?coordinates
+  OPTIONAL {
+    ?item wdt:P18 ?image.
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
