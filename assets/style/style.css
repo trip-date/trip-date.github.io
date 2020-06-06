@@ -70,7 +70,7 @@ header {
   margin-bottom: 14px; }
   #filters_box select {
     height: 28px;
-    width: 98px; }
+    width: 112px; }
 
 main {
   display: flex;
@@ -125,9 +125,12 @@ main {
       main aside div li {
         padding: 14px 0;
         border-bottom: 1px solid #b3b3b3;
-        cursor: pointer; }
+        cursor: pointer;
+        display: flex;
+        align-items: center; }
         main aside div li img {
-          width: 28px; }
+          width: 28px;
+          margin-right: 14px; }
       main aside div li:hover {
         background-color: lighter(#5971F1, 10); }
       main aside div .trip {

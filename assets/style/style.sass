@@ -85,7 +85,7 @@ header
 
 	select
 		height: $x * 2
-		width: $x * 7
+		width: $x * 8
 
 main
 	display: flex
@@ -163,8 +163,12 @@ main
 				border-bottom: 1px solid darken($color_b,30)
 				cursor: pointer
 
+				display: flex
+				align-items: center
+
 				img
 					width: $x * 2
+					margin-right: $x
 				
 			li:hover
 				background-color: lighter($color_a,10)
@@ -177,7 +181,7 @@ main
 			height: 80vh
 			background-color: $color_b
 
-		//#reccommended
+		//#recommended
 		//	background-color: red
 
 
