@@ -41,7 +41,7 @@ $new_trips =
             <h1><a href="">Trip date</a></h1>
             <div>
                 <!-- <h2><a href="liked">Liked</a></h2> -->
-                <h2><a href="profile">Martino</a></h2>
+                <h2><a href="profile">Hello</a></h2>
             </div>
         </header>
         <main>
@@ -98,9 +98,9 @@ $new_trips =
                 </div>
                 <div id="itinerary">
                     <div class="container">
-                        <h2>Water and Fire</h2>
-			         <div id="map" style="height: 400px"></div>
-                            <img src="assets/images/cascata.jpg">
+                        <h2 class="poi-name">Water and Fire</h2>
+			<div id="map" style="height: 400px"></div>
+                        <img src="assets/images/cascata.jpg" />
                         <div>
                             <h3>Information</h3>
                             <div>by Museum Val Verzasca</div>
