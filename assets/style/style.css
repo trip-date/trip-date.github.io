@@ -85,14 +85,14 @@ main {
     width: 62%; }
     main section #itinerary, main section #profile {
       background-color: #FFF;
-      height: 75vh;
       border-radius: 7px; }
     main section h2 {
       margin-bottom: 14px; }
+    main section h3 {
+      margin: 14px 0; }
     main section #buttons {
-      position: absolute;
-      width: 62%;
-      bottom: 0;
+      width: 100%;
+      margin-top: 42px;
       cursor: pointer;
       display: flex;
       justify-content: space-between; }
@@ -101,13 +101,13 @@ main {
         width: 50%;
         color: white; }
       main section #buttons #like {
-        background-color: #20b677; }
+        background-color: #1c777d; }
       main section #buttons #like:hover {
-        background-color: #188b5b; }
+        background-color: #134f53; }
       main section #buttons #dislike {
-        background-color: #E72F27; }
+        background-color: #c984a3; }
       main section #buttons #dislike:hover {
-        background-color: #c51d16; }
+        background-color: #b96188; }
   main aside {
     width: 35%; }
     main aside div {
@@ -125,8 +125,13 @@ main {
         padding: 14px 0;
         border-bottom: 1px solid #b3b3b3;
         cursor: pointer; }
+        main aside div li img {
+          width: 28px; }
       main aside div li:hover {
-        background-color: #8899f5; }
+        background-color: lighter(#5971F1, 10); }
+      main aside div .trip {
+        font-weight: bold;
+        display: block; }
     main aside #liked {
       height: 80vh;
       background-color: #FFF; }

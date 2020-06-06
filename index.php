@@ -92,10 +92,10 @@ $featured_pois =
                 <div id="itinerary">
                     <div class="container">
                         <h2>Itinerary name</h2>
-                        <img src="assets/images/itinerario_verzasca.png">
+                        <img src="assets/images/itinerario_verzasca.png" width="1331" heigth="851">
                         <div>
                             <h3>Information</h3>
-                            <div>meta 0 <a href="">Link</a></div>
+                            <div>meta 0</div>
                             <div>meta 1</div>
                             <div>meta 2</div>
                             <div>meta 3</div>
@@ -104,6 +104,8 @@ $featured_pois =
                             <div>meta 6</div>
                             <div>meta 7</div>
                             <div>meta 8</div>
+                            <div>meta 9</div>
+                            <div>meta 10</div>
                         </div>
                     </div>
                     <div id="buttons">
@@ -116,7 +118,10 @@ $featured_pois =
                 <div id="new">
                     <h2>New itineraries</h2>
                     <ul>
-                        <li>itinerary name</li>
+                        <li>
+                            <img href="assets/images/museum.png">
+                            itinerary name
+                        </li>
                         <li>itinerary name</li>
                         <li>itinerary name</li>
                         <li>itinerary name</li>
