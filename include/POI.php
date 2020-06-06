@@ -1,8 +1,19 @@
 <?php
+
 class POI extends Queried {
 
 	function getImageURL() {
-		return 'http://commons.wikimedia.org/wiki/Special:FilePath/' . $this->get( 'poi_image' );
+		return sprintf(
+			'http://commons.wikimedia.org/wiki/Special:FilePath/%s',
+			$this->get( 'poi_image' )
+		);
+	}
+
+	function getWikidataURL() {
+		return sprintf(
+			'https://www.wikidata.org/wiki/%s',
+			$this->get( 'wikidata_ID' )
+		);
 	}
 
 	function getPOIData() {
