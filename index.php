@@ -41,7 +41,7 @@ $new_trips =
             <h1><a href="">Trip date</a></h1>
             <div>
                 <!-- <h2><a href="liked">Liked</a></h2> -->
-                <h2><a href="profile">Martino</a></h2>
+                <h2><a href="profile">Hello</a></h2>
             </div>
         </header>
         <main>
@@ -98,7 +98,7 @@ $new_trips =
                 </div>
                 <div id="itinerary">
                     <div class="container">
-                        <h2>Itinerary name</h2>
+                        <h2 class="poi-name">Itinerary name</h2>
 			<div id="map" style="height: 400px"></div>
                         <img src="assets/images/itinerario_verzasca.png">
                         <div>

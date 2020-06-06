@@ -12,6 +12,8 @@
 	var $map = $( '#' + selector );
 	$map.hide();
 
+	var $poiName = $( '.poi-name' );
+
 	// markers indexed by Wikidata ID
 	var markers = {};
 
@@ -34,11 +36,15 @@
 	$actionShowPOIs.click( function( e ) {
 
 		$map.show();
+		map.invalidateSize();
 
 		var $el   = $(this);
 		var lat   = $el.data( 'lat' );
 		var lng   = $el.data( 'lng' );
 		var wdata = $el.data( 'wdata' );
+		var title = $el.text();
+
+		$poiName.text( title );
 
 		// asd
 		map.setView( [ lat, lng ], 20 );
