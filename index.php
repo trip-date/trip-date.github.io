@@ -8,8 +8,14 @@ require __DIR__ . '/load.php';
 $featured_pois =
 	( POI::factory() )
 		->whereInt( 'poi_featured', 1 )
+		->orderBy( 'poi_name' )
 		->queryResults();
 
+$new_trips =
+	( Trip::factory() )
+		->joinOn( 'INNER', 'poi', 'poi.poi_ID = trip.poi_ID' )
+		->orderBy( 'trip_name' )
+		->queryResults();
 ?>
 <!DOCTYPE html>
 <html>
@@ -118,16 +124,20 @@ $featured_pois =
                 <div id="new">
                     <h2>New itineraries</h2>
                     <ul>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
-                        <li>itinerary name</li>
+			<?php foreach( $new_trips as $new_trip ): ?>
+
+				<li><?=
+					( new HTML( 'a' ) )
+						->setText( esc_html( $new_trip->get( 'trip_name' ) ) )
+						->setAttr( 'href',       $new_trip->getWikidataURL() )
+						->setAttr( 'data-lat',   $new_trip->get( 'poi_lat' ) )
+						->setAttr( 'data-lng',   $new_trip->get( 'poi_lng' ) )
+						->setAttr( 'data-wdata', $new_trip->get( 'wikidata_ID' ) )
+						->addClass( 'action-show-poi' )
+						->render()
+				?></li>
+
+			<?php endforeach ?>
                     </ul>
                 </div>
                 <div id="reccommended">
