@@ -98,7 +98,7 @@ $new_trips =
                 </div>
                 <div id="itinerary">
                     <div class="container">
-                        <h2 class="poi-name">Water and Fire</h2>
+                        <h2 class="title">Water and Fire</h2>
 			<div id="map" style="height: 400px"></div>
                         <img src="assets/images/cascata.jpg" />
                     <div id="buttons">
@@ -107,7 +107,7 @@ $new_trips =
                      </div>
     			<div>
                             <h3>Information</h3>
-                            <div>by <span class="poi-name">Museum Val Verzasca</span></div>
+                            <div class="trip-poiname-container">by <span class="trip-poiname">Museum Val Verzasca</span></div>
                             <div class="trip-length-container">Trip length (meters): <span class="trip-length">?</span></div>
                             <div class="trip-location-container">Place: <span class="trip-location">?</span></div>
                             <div class="trip-height-container">Trip length (meters): <span class="trip-height">?</span></div>
@@ -188,6 +188,7 @@ $new_trips =
 							->setAttr( 'data-lat',   $featured_poi->get( 'poi_lat' ) )
 							->setAttr( 'data-lng',   $featured_poi->get( 'poi_lng' ) )
 							->setAttr( 'data-wdata', $featured_poi->get( 'wikidata_ID' ) )
+      							->setAttr( 'data-poiname',  $featured_poi->get( 'poi_name' ) )
 							->addClass( 'action-show-poi' )
 							->render()
 					?>

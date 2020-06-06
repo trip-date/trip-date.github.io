@@ -13,7 +13,6 @@
 	$map.hide();
 
 	var $title   = $( '.title' );
-	var $poiName = $( '.poi-name' );
 
 	// markers indexed by Wikidata ID
 	var markers = {};
@@ -25,6 +24,7 @@
 		'minutes',
 		'location',
 		'height',
+		'poiname',
 	];
 	for( var i in fields ) {
 		var field = fields[ i ];
@@ -55,7 +55,6 @@
 		var lat     = $el.data( 'lat'   );
 		var lng     = $el.data( 'lng'   );
 		var wdata   = $el.data( 'wdata' );
-		var poiname = $el.data( 'title' );
 		var tripLength = $el.data( 'length' );
 		var title = $el.text();
 
@@ -71,7 +70,6 @@
 		}
 
 		$title.text( title );
-		$poiName.text( poiname );
 
 		console.log( tripLength );
 
