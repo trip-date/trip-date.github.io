@@ -2,6 +2,8 @@
 
 TripDate is an online dating application. Let's join adventurers and itineraries!
 
+This project was part of the [GLAMhack 2020 Hackaton](http://make.opendata.ch/wiki/event:2020-06)! Team: [Extra Moenia](https://hack.glam.opendata.ch/project/8).
+
 ## Team
 
 * [Iolanda Pensa](http://iopensa.ch/iolanda-pensa) - GLAM hacker
