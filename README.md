@@ -14,16 +14,17 @@ TripDate is an online dating application. Let's join adventurers and itineraries
 
 How to hack this project quickly in nearly ~20 seconds.
 
-1. Create a MariaDB database called (as usual):
+1. Create a MariaDB database. For example:
 
 ```
 mysql
 CREATE DATABASE `tripdate`;
 CREATE USER `tripdate`@localhost IDENTIFIED BY 'super-secret-password-asd';
 GRANT ALL PRIVILEGES ON `tripdate`.* TO `tripdate`@localhost;
+quit
 ```
 
-2. Copy the project and dependencies
+2. Copy the project and dependencies somewhere:
 
 ```
 git clone https://github.com/trip-date/trip-date.github.io.git
@@ -39,14 +40,22 @@ cp load-example.php load.php
 nano                load.php
 ```
 
-4. Import the database
+4. Import the database schema. For example:
 
 ```
 mysql tripdate -u tripdate -p < documentation/database/schema.sql 
 ```
 
-5. Have fun!
+5. Have fun! For example:
 
 ```
 php -S localhost:8080
 ```
+
+Now you should see something like this:
+
+https://tripdate.gitpull.it/
+
+## License
+
+It's Free Software. Don't know which license, but stay sure that this is Free as in Freedom software. asd
