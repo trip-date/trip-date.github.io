@@ -1,1 +1,52 @@
-# trip-date.github.io
+# TripDate
+
+TripDate is an online dating application. Let's join adventurers and itineraries!
+
+## Team
+
+* [Iolanda Pensa](http://iopensa.ch/iolanda-pensa) - GLAM hacker
+* [Marta Pucciarelli](https://it.wikipedia.org/wiki/Utente:Marta.pucciarelli) - GLAM hacker
+* [Vanessa De Luca](https://maind.supsi.ch/master-interaction-design/) - contributor
+* [Giovanni Profeta](https://maind.supsi.ch/master-interaction-design/) - frontend developer
+* [Valerio Bozzolan](https://boz.reyboz.it/) - backend developer and sys
+
+## Hack
+
+How to hack this project quickly in nearly ~20 seconds.
+
+1. Create a MariaDB database called (as usual):
+
+```
+mysql
+CREATE DATABASE `tripdate`;
+CREATE USER `tripdate`@localhost IDENTIFIED BY 'super-secret-password-asd';
+GRANT ALL PRIVILEGES ON `tripdate`.* TO `tripdate`@localhost;
+```
+
+2. Copy the project and dependencies
+
+```
+git clone https://github.com/trip-date/trip-date.github.io.git
+git clone https://gitpull.it/source/suckless-php.git
+git clone https://gitpull.it/source/boz-mw.git
+```
+
+3. Enter in the project and update your MySQL configuration
+
+```
+cd trip-date.github.io
+cp load-example.php load.php
+nano                load.php
+```
+
+4. Import the database
+
+```
+mysql tripdate -u tripdate -p < documentation/database/schema.sql 
+```
+
+5. Have fun!
+
+```
+php -S localhost:8080
+```
