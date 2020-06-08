@@ -9,7 +9,7 @@ This project was part of the [GLAMhack 2020 Hackaton](http://make.opendata.ch/wi
 * [Iolanda Pensa](http://iopensa.ch/iolanda-pensa) - GLAM hacker
 * [Marta Pucciarelli](https://it.wikipedia.org/wiki/Utente:Marta.pucciarelli) - GLAM hacker
 * [Vanessa De Luca](https://maind.supsi.ch/master-interaction-design/) - contributor
-* [Giovanni Profeta](https://maind.supsi.ch/master-interaction-design/) - frontend developer
+* [Giovanni Profeta](https://twitter.com/profeta_g) - frontend developer
 * [Valerio Bozzolan](https://boz.reyboz.it/) - backend developer and sys
 
 ## Hack
@@ -60,4 +60,5 @@ https://tripdate.gitpull.it/
 
 ## License
 
-It's Free Software. Don't know which license, but stay sure that this is Free as in Freedom software. asd
+TripDate is realised under [GNU Affero General Public License](https://github.com/trip-date/trip-date.github.io/blob/master/LICENSE).
+
