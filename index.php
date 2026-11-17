@@ -129,7 +129,7 @@ $new_trips =
             							->setAttr( 'href', $new_trip->getWikidataURL() )
             							->addClass( 'wikidata-link' )
             							->setAttr( 'target', '_blank' )
-            							->setText(
+								->setHTML(
             								( new HTML( 'img' ) )
             									->setAttr( 'src', 'assets/images/edit.png' )
             									->render()
@@ -141,7 +141,7 @@ $new_trips =
 
             					<?=
             						( new HTML( 'a' ) )
-            							->setText( esc_html( $new_trip->get( 'trip_name' ) . ' (' . $new_trip->get( 'poi_name' ) . ')' ) )
+								->setText( esc_html( $new_trip->get( 'trip_name' ) . ' (' . $new_trip->get( 'poi_name' ) . ')' ) )
             							->setAttr( 'href',          $new_trip->getWikidataURL() )
             							->setAttr( 'data-lat',      $new_trip->get( 'poi_lat' ) )
             							->setAttr( 'data-lng',      $new_trip->get( 'poi_lng' ) )
@@ -169,7 +169,7 @@ $new_trips =
 							->setAttr( 'href', $featured_poi->getWikidataURL() )
 							->addClass( 'wikidata-link' )
 							->setAttr( 'target', '_blank' )
-							->setText(
+							->setHTML(
 								( new HTML( 'img' ) )
 									->setAttr( 'src', 'assets/images/edit.png' )
 									->render()
