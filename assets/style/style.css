@@ -152,4 +152,8 @@ footer {
   background-color: #5971F1;
   color: white; }
 
+footer a {
+  color: white !important;
+}
+
 /*# sourceMappingURL=style.css.map */

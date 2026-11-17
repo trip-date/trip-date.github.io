@@ -199,7 +199,7 @@ $new_trips =
             </aside>
         </main>
         <footer>
-            Trip Date
+            Trip Date - <a href="<?= esc_attr(REPOSITORY_URL) ?>">Open Source (git)</a>
         </footer>
         <script type="text/javascript" src="assets/script/function.js"></script>
     </body>

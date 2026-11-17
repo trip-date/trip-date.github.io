@@ -1,5 +1,7 @@
 <?php
 
+define_default('REPOSITORY_URL', 'https://github.com/trip-date/trip-date.github.io');
+
 // autoload classes
 spl_autoload_register( function( $name ) {
 
