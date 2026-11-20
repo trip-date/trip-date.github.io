@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../../load.php';
+require __DIR__ . '/../../../load.php';
 
 $pois =
 	( POI::factory() )

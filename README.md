@@ -51,6 +51,7 @@ mysql tripdate -u tripdate -p < documentation/database/schema.sql
 5. Have fun! For example:
 
 ```
+cd www
 php -S localhost:8080
 ```
 

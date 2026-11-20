@@ -3,7 +3,7 @@
 // apologies for the dirty and quick!
 // we have NOT the time for this! asd
 
-require __DIR__ . '/load.php';
+require __DIR__ . '/../load.php';
 
 $featured_pois =
 	( POI::factory() )
